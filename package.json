@@ -1,0 +1,16 @@
+{
+  "name": "redux",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrent --kill-others 'npm run server' 'npm run watch'",
+    "server": "browser-sync start --files 'bundle.js' --server",
+    "watch": "watchify index.js -o bundle.js"
+  },
+  "author": "evenfrost",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.14.7"
+  }
+}
