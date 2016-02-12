@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrent --kill-others 'npm run server' 'npm run watch'",
-    "server": "browser-sync start --files 'bundle.js' --server",
-    "watch": "watchify index.js -o bundle.js"
+    "start": "npm run server & npm run watch",
+    "server": "./node_modules/browser-sync/bin/browser-sync.js start --files 'bundle.js' --server --no-notify --no-open",
+    "watch": "./node_modules/watchify/bin/cmd.js index.js -o bundle.js"
   },
   "author": "evenfrost",
   "license": "MIT",
   "dependencies": {
     "react": "^0.14.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "watchify": "^3.7.0"
   }
 }
