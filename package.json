@@ -6,12 +6,13 @@
   "scripts": {
     "start": "npm run server & npm run watch",
     "server": "browser-sync start --files 'bundle.js' --server --no-notify --no-open --port 4000",
-    "watch": "watchify index.js -o bundle.js -t [ babelify --presets [ es2015 react ] ]"
+    "watch": "watchify index.js -t [ babelify --presets [ es2015 react ] ] -t reactify -o bundle.js "
   },
   "author": "evenfrost",
   "license": "MIT",
   "dependencies": {
     "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
     "redux": "^3.3.1"
   },
@@ -20,7 +21,12 @@
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.1",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^5.0.1",
+    "eslint-plugin-react": "^3.16.1",
+    "reactify": "^1.1.1",
     "redux-devtools": "^3.1.1",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "webpack": "^1.12.13"
   }
 }
