@@ -1,23 +1,26 @@
 {
-  "name": "redux",
+  "name": "redux-boilerplate",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "npm run server & npm run watch",
-    "server": "browser-sync start --files 'bundle.js' --server --no-notify --no-open",
+    "server": "browser-sync start --files 'bundle.js' --server --no-notify --no-open --port 4000",
     "watch": "watchify index.js -o bundle.js -t [ babelify --presets [ es2015 react ] ]"
   },
   "author": "evenfrost",
   "license": "MIT",
   "dependencies": {
-    "react": "^0.14.7"
+    "react": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "browser-sync": "^2.11.1",
+    "redux-devtools": "^3.1.1",
     "watchify": "^3.7.0"
   }
 }
