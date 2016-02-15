@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run server & npm run watch",
-    "server": "./node_modules/browser-sync/bin/browser-sync.js start --files 'bundle.js' --server --no-notify --no-open",
-    "watch": "./node_modules/watchify/bin/cmd.js index.js -o bundle.js"
+    "server": "browser-sync start --files 'bundle.js' --server --no-notify --no-open",
+    "watch": "watchify index.js -o bundle.js -t [ babelify --presets [ es2015 react ] ]"
   },
   "author": "evenfrost",
   "license": "MIT",
@@ -14,6 +14,9 @@
     "react": "^0.14.7"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
     "browser-sync": "^2.11.1",
     "watchify": "^3.7.0"
   }
