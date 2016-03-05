@@ -7,6 +7,7 @@ export default {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
+    public: 'public',
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -15,6 +16,9 @@ export default {
       },
     }),
     new HtmlWebpackPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
   ],
   module: {
     loaders: [
