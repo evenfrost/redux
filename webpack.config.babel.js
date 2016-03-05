@@ -16,7 +16,6 @@ export default {
       },
     }),
     new HtmlWebpackPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],
