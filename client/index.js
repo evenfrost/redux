@@ -23,3 +23,8 @@ import { createStore } from 'redux';
 
 // render();
 // store.subscribe(render);
+
+ReactDOM.render(
+  <h1>Test2</h1>,
+  document.querySelector('main')
+);
