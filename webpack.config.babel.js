@@ -3,11 +3,18 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-  entry: path.resolve(__dirname, 'client'),
+  debug: true,
+  devtool: '#eval-source-map',
+  context: path.resolve(__dirname, 'client'),
+  entry: [
+    'webpack/hot/dev-server',
+    'webpack-hot-middleware/client',
+    './index',
+  ],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    public: 'public',
+    publicPath: '/public/',
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -15,7 +22,9 @@ export default {
         warnings: false,
       },
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'client', 'index.html'),
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],

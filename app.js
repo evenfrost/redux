@@ -3,13 +3,13 @@
  */
 import browserSync from 'browser-sync';
 import webpack from 'webpack';
+import webpackConfig from './webpack.config.babel';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
 /**
- * Require ./webpack.config.js and make a bundler from it
+ *  Make a bundler from required ./webpack.config.js.
  */
-const webpackConfig = require('./webpack.config.babel');
 const bundler = webpack(webpackConfig);
 
 /**
@@ -17,7 +17,7 @@ const bundler = webpack(webpackConfig);
  */
 browserSync({
   server: {
-    baseDir: 'client',
+    baseDir: 'public',
 
     middleware: [
       webpackDevMiddleware(bundler, {
@@ -40,7 +40,6 @@ browserSync({
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
   files: [
-    'app/css/*.css',
-    'app/*.html',
+    'client/styles/**/*.styl',
   ],
 });

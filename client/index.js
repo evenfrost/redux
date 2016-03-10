@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 
-import './styles/index.styl';
+// import './styles/index.styl';
 
 // import Counter from './components/Counter';
 // import counter from './reducers';

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run server & npm run watch",
-    "server": "browser-sync start --files 'public/bundle.js' --server public --no-notify --no-open --port 5000",
+    "start": "babel-node app.js",
+    "server": "browser-sync start --server public --no-notify --no-open --port 5000",
     "watch": "watchify index.js -t [ babelify --presets [ es2015 react ] ] -t reactify -o bundle.js "
   },
   "author": "evenfrost",
