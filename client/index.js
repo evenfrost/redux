@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { createStore } from 'redux';
 
 // import './styles/index.styl';
 
@@ -24,7 +24,12 @@ import { createStore } from 'redux';
 // render();
 // store.subscribe(render);
 
-ReactDOM.render(
-  <h1>Test2</h1>,
-  document.querySelector('main')
-);
+// ReactDOM.render(
+//   <h1></h1>,
+//   document.querySelector('main')
+// );
+document.write('123');
+
+if (module.hot) {
+  module.hot.accept();
+}
