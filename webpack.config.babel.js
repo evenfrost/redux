@@ -6,11 +6,24 @@ export default {
   context: __dirname,
   entry: [
     './client/index.js',
-    'webpack/hot/dev-server',
   ],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
     publicPath: '/',
+  },
+  module: {
+    loaders: [
+      { test: /\.css$/, loader: 'style!css' },
+      {
+        test: /\.styl$/,
+        loader: 'style!css!stylus',
+      },
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+      },
+    ],
   },
 };
