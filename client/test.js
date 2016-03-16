@@ -1,1 +1,1 @@
-module.exports = 'yay';
+export default 'yay';
