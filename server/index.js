@@ -1,13 +1,6 @@
-import http from 'http';
+import Koa from 'koa';
+import serve from 'koa-static';
 
-const server = http.createServer();
+const app = new Koa();
 
-server.on('request', (req, res) => {
-  console.log('method', req.method);
-  console.log('url', req.url);
-
-  res.write('Hello, world');
-  res.end();
-});
-
-server.listen(5000);
+app.listen(5000);
