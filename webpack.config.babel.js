@@ -1,10 +1,11 @@
 import path from 'path';
-// import webpack from 'webpack';
+import webpack from 'webpack';
 // import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   context: __dirname,
   entry: [
+    'webpack-hot-middleware/client',
     './client/index.js',
   ],
   output: {
@@ -13,6 +14,11 @@ export default {
     publicPath: '/',
   },
   module: {
+    plugins: [
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoErrorsPlugin(),
+    ],
     loaders: [
       { test: /\.css$/, loader: 'style!css' },
       {

@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb/base",
+  "parser": "babel-eslint",
+  "rules": {
+    "no-unused-expressions": [2, { "allowShortCircuit": true, "allowTernary": true }]
+  }
+}
