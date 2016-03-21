@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/nodemon --exec npm run dev",
+    "start": "nodemon --exec npm run dev",
     "webpack-dev-server": "webpack-dev-server --content-base public/ --inline --watch --hot --port 5000",
-    "dev": "./node_modules/.bin/babel-node server/index.js"
+    "dev": "babel-node server/index.js"
   },
   "author": "evenfrost <evenfrosty@gmail.com>",
   "license": "MIT",
