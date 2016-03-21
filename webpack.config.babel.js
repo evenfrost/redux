@@ -13,12 +13,12 @@ export default {
     filename: 'bundle.js',
     publicPath: '/',
   },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+  ],
   module: {
-    plugins: [
-      new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin(),
-    ],
     loaders: [
       { test: /\.css$/, loader: 'style!css' },
       {
