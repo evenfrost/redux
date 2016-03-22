@@ -1,15 +1,15 @@
-import path from 'path';
+import { resolve } from 'path';
 import webpack from 'webpack';
-// import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   context: __dirname,
   entry: [
-    'webpack-hot-middleware/client',
-    './client/index.js',
+    'webpack-hot-middleware/client?noInfo=true',
+    resolve(__dirname, 'client/index.js'),
   ],
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: resolve(__dirname, 'public'),
     filename: 'bundle.js',
     publicPath: '/',
   },
@@ -17,6 +17,9 @@ export default {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      template: resolve(__dirname, 'client/index.jade'),
+    }),
   ],
   module: {
     loaders: [
@@ -29,6 +32,10 @@ export default {
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel',
+      },
+      {
+        test: /\.jade$/,
+        loader: 'jade',
       },
     ],
   },
