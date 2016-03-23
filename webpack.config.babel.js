@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default {
   context: __dirname,
   entry: [
-    'webpack-hot-middleware/client?noInfo=true',
+    'webpack-hot-middleware/client',
     resolve(__dirname, 'client/index.js'),
   ],
   output: {
