@@ -4,7 +4,7 @@ import convert from 'koa-convert';
 import serve from 'koa-static';
 import morgan from 'koa-morgan';
 import webpack from 'webpack';
-import webpackConfig from '../webpack.config.babel';
+import webpackConfig from '../webpack.config.dev.babel';
 import webpackDevMiddleware from 'koa-webpack-dev-middleware';
 import webpackHotMiddleware from 'koa-webpack-hot-middleware';
 

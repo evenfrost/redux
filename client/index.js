@@ -7,7 +7,6 @@ import { render } from 'react-dom';
 
 // import './styles/index.styl';
 import App from './components/app';
-console.log(App);
 
 render(
   <App />,

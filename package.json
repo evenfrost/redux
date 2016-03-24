@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec npm run dev --watch server/index.js --watch webpack.config.babel.js",
+    "start": "nodemon --exec npm run dev --watch server/index.js --watch webpack.config.dev.babel.js",
     "wds": "webpack-dev-server --content-base public/ --inline --watch --hot --port 5000",
-    "dev": "babel-node server/index.js"
+    "dev": "babel-node server/index.js",
+    "build": "webpack --progress -p --config webpack.config.prod.babel.js"
   },
   "author": "evenfrost <evenfrosty@gmail.com>",
   "license": "MIT",
