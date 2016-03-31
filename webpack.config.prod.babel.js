@@ -27,6 +27,9 @@ export default {
       },
     }),
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
   module: {
     loaders: [
       { test: /\.css$/, loader: 'style!css' },

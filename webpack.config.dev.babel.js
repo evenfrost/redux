@@ -6,7 +6,7 @@ export default {
   devtool: 'eval-source-map',
   context: __dirname,
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?noInfo=true',
     resolve(__dirname, 'client/index.js'),
   ],
   output: {
@@ -22,6 +22,9 @@ export default {
       template: resolve(__dirname, 'client/index.jade'),
     }),
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
   module: {
     loaders: [
       { test: /\.css$/, loader: 'style!css' },
@@ -30,7 +33,7 @@ export default {
         loader: 'style!css!stylus',
       },
       {
-        test: /\.js?$/,
+        test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
         loader: 'babel',
       },
