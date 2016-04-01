@@ -7,7 +7,7 @@ export default class List extends React.Component {
 
     return (
       <ul>
-        {data.map(item => <ListItem label={item.label} />)}
+        {data.map(item => <ListItem user={item.user} />)}
       </ul>
     );
   }
