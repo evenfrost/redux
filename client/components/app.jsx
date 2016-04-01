@@ -1,5 +1,6 @@
 import React from 'react';
 import List from './list';
+import Form from './form';
 
 const data = [{
   label: 'first',
@@ -26,7 +27,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <List data={this.state.data} />
+      <div>
+        <List data={this.state.data} />
+        <Form />
+      </div>
     );
   }
 }
