@@ -3,11 +3,11 @@ import ListItem from './item';
 
 export default class List extends React.Component {
   render() {
-    const data = this.props.data;
+    const usernames = this.props.usernames;
 
     return (
       <ul>
-        {data.map(item => <ListItem user={item.user} />)}
+        {usernames.map(username => <ListItem username={username} />)}
       </ul>
     );
   }

@@ -2,10 +2,10 @@ import React from 'react';
 
 export default class ListItem extends React.Component {
   render() {
-    const user = this.props.user;
+    const username = this.props.username;
 
     return (
-      <li>{user.name.first} {user.name.last}</li>
+      <li>{username.first} {username.last}</li>
     );
   }
 }
