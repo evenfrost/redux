@@ -1,39 +1,14 @@
 import React from 'react';
-import List from './list';
-import Form from './form';
+import Footer from './footer';
+import AddTodo from '../containers/add-todo';
+import VisibleTodoList from '../containers/visible-todo-list';
 
-export default () => (
-  <List />
+const App = () => (
+  <div>
+    <AddTodo />
+    <VisibleTodoList />
+    <Footer />
+  </div>
 );
 
-export default class App extends React.Component {
-  state = { usernames: [] }
-
-  componentDidMount() {
-    window.fetch('http://api.randomuser.me/?results=100')
-      .then(res => res.json())
-      .then(json => {
-        const usernames = json.results.map(item => {
-          const { first, last } = item.user.name;
-
-          return { first, last };
-        });
-
-        this.setState({ usernames });
-      });
-  }
-
-  handleUserSubmit = username => {
-    console.log('username', username);
-    this.setState({ usernames: [...this.state.usernames, username] });
-  }
-
-  render() {
-    return (
-      <div>
-        <List usernames={this.state.usernames} />
-        <Form onUserSubmit={this.handleUserSubmit} />
-      </div>
-    );
-  }
-}
+export default App;
