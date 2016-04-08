@@ -7,7 +7,7 @@ export default {
   context: __dirname,
   entry: [
     'webpack-hot-middleware/client?noInfo=true',
-    resolve(__dirname, 'client/index.js'),
+    resolve(__dirname, 'client/index.jsx'),
   ],
   output: {
     path: resolve(__dirname, 'public'),
