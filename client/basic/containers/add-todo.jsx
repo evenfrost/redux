@@ -9,11 +9,13 @@ let AddTodo = ({ dispatch }) => {
     <div>
       <input ref={node => {
         input = node;
-      }} />
+      }}
+      />
       <button onClick={() => {
         dispatch(addTodo(input.value));
         input.value = '';
-      }}>
+      }}
+      >
         Add Todo
       </button>
     </div>

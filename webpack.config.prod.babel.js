@@ -6,7 +6,7 @@ export default {
   devtool: 'cheap-module-source-map',
   context: __dirname,
   entry: [
-    'webpack-hot-middleware/client',
+    // 'webpack-hot-middleware/client',
     resolve(__dirname, 'client/index.jsx'),
   ],
   output: {
@@ -16,7 +16,7 @@ export default {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, 'client/index.jade'),
