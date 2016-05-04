@@ -24,7 +24,6 @@ export default class App extends React.Component {
   }
 
   handleUserSubmit = username => {
-    console.log('username', username);
     this.setState({ usernames: [...this.state.usernames, username] });
   }
 
