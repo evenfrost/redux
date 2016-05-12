@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 import { createAction } from 'redux-actions';
 
 export const selectSubreddit = createAction('SELECT_SUBREDDIT');
@@ -10,7 +11,7 @@ export const receivePosts = createAction('RECEIVE_POSTS', (subreddit, json) => (
 }));
 
 export function fetchPosts(subreddit) {
-  return function (dispatch) {
+  return dispatch => {
     dispatch(requestPosts(subreddit));
 
     return fetch(`http://www.reddit.com/r/${subreddit}.json`)
